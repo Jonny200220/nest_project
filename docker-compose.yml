@@ -9,16 +9,3 @@ services:
     environment:
       - PORT=${PORT}
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
-
-  auth-db:
-    container_name: auth-db
-    image: postgres:15-alpine
-    restart: always
-    volumes:
-      - ./postgres:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=123456
-      - POSTGRES_DB=authdb
